@@ -1,4 +1,4 @@
-import { Settings, Play, Pause, RotateCcw, Target, Zap, Activity, BarChart2, Volume2, VolumeX } from 'lucide-react';
+import { Settings, Play, Pause, RotateCcw, Target, Zap, Activity, BarChart2, Volume2, VolumeX, Github } from 'lucide-react';
 
 const Sidebar = ({ gameState, onStart, onPause, onReset, settings, setSettings, stats, history, PerformanceChart }) => {
     const modes = [
@@ -112,7 +112,7 @@ const Sidebar = ({ gameState, onStart, onPause, onReset, settings, setSettings, 
                 </div>
             </div>
 
-            <div style={{ display: 'grid', gap: '0.75rem', paddingBottom: '2rem' }}>
+            <div style={{ display: 'grid', gap: '0.75rem', paddingBottom: '1rem' }}>
                 {gameState === 'menu' || gameState === 'finished' ? (
                     <button className="neon-button" onClick={onStart} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                         <Play size={18} fill="currentColor" /> START TRAINING
@@ -152,6 +152,39 @@ const Sidebar = ({ gameState, onStart, onPause, onReset, settings, setSettings, 
                         </button>
                     </div>
                 )}
+            </div>
+
+            <div className="sidebar-footer" style={{
+                marginTop: 'auto',
+                padding: '1.5rem 0 1rem',
+                borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '0.4rem',
+                fontSize: '0.75rem',
+                color: 'var(--text-secondary)'
+            }}>
+                <span>Made with ☕ and ❤️ by</span>
+                <a
+                    href="https://github.com/remilsalim"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        color: 'var(--text-primary)',
+                        textDecoration: 'none',
+                        transition: 'color 0.2s',
+                        fontWeight: 600
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.color = 'var(--accent-cyan)'}
+                    onMouseOut={(e) => e.currentTarget.style.color = 'var(--text-primary)'}
+                >
+                    <Github size={14} />
+                    <span>remilsalim</span>
+                </a>
             </div>
         </aside>
     );
