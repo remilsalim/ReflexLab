@@ -71,4 +71,4 @@ Check out my other projects on [GitHub](https://github.com/remilsalim).
 
 ## 📄 License
 
-This project is open-source. Feel free to use and modify it!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
